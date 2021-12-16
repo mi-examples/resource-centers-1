@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/pt/resource-centers-1/style.css">
+
+<div class="generic-wrapper p-main-color-bg">
+    <div class="generic-page">
+        <div class="generic-page__header">
+            <div class="generic-page__header-content">
+                <div class="generic-page__title">[Main Title]</div>
+                <div class="generic-page__description">[Main Description]</div>
+            </div>
+            <div class="generic-page__header-logo">
+                <img src="[Logo Image]" alt="Logo">
+            </div>
+        </div>
+
+        <div class="page-container" id="blocks-container">
+            <a href="[First Box Url]" class="page-container__one">
+                <div class="page-container__icon">
+                    <img src="[First Box Icon]">
+                </div>
+                <div class="page-container__title p-main-color">[First Box Title]</div>
+                <div class="page-container__description">[First Box Description]</div>
+            </a>
+
+            <a href="[Second Box Url]" class="page-container__two">
+                <div class="page-container__icon">
+                    <img src="[Second Box Icon]">
+                </div>
+                <div class="page-container__title p-main-color">[Second Box Title]</div>
+                <div class="page-container__description">[Second Box Description]</div>
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    //Append Additional Box
+    function addBlocks(blocks, container) {
+        for (let i = 0; i < blocks.length; i++) {
+            let block = $(`
+                        <a href="${blocks[i]['href']}" class="page-container__additional">
+                            <img src="${blocks[i]['img']}" alt="icon ${blocks[i]}">
+                            <div class="page-container__title p-main-color">${blocks[i]['title']}</div>
+                            <div class="page-container__description p-main-color">${blocks[i]['description']}</div>
+                        </a>
+                    `);
+
+            $(container).append(block);
+        }
+    };
+
+    addBlocks([Blocks], '#blocks-container');
+</script>
